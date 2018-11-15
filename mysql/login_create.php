@@ -1,32 +1,14 @@
 <?php
+include "db_con.php";
+include "functions.php";
+?>
 
+
+<?php
 if(isset($_POST['submit']))
 {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $connection = mysqli_connect('localhost','root', '','loginapp');
-
-    if ($connection)
-    {
-        echo "We are connected";
-    }
-    else
-    {
-        die("DB connection failed");
-    }
-
-    $query = "INSERT INTO users(username, password)";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result)
-    {
-        die("Query failed");
-    }
-
+    createRows();
 }
-
 ?>
 
 
@@ -49,6 +31,7 @@ if(isset($_POST['submit']))
 
 <div class="container">
     <div class="col-sm-6">
+        <h2>CREATE</h2>
         <form action="" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -59,7 +42,7 @@ if(isset($_POST['submit']))
                 <input type="password" name="password" class="form-control">
             </div>
 
-            <input type="submit" name="submit" class="btn-primary">
+            <input type="submit" name="submit" value="CREATE" class="btn-primary">
 
 
 

@@ -26,6 +26,16 @@
 		Step 4 - echo the variable
 
 	*/
+
+	$inputText = "superCALI00!!";
+
+    $hashFormat = "$2y$10$";
+    $salt = "4k0kK9Nn8luk56K9n82l103knF80143K54";
+    $hashF_and_salt = $hashFormat . $salt;
+
+    $result = crypt($inputText, $hashF_and_salt);
+
+    echo $result;
 	
 	?>
 

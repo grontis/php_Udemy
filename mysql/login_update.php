@@ -1,35 +1,15 @@
 <?php
+    include "db_con.php";
+    include "functions.php";
+?>
 
+<?php
 if(isset($_POST['submit']))
 {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $connection = mysqli_connect('localhost','root', '','loginapp');
-
-    if ($connection)
-    {
-        echo "We are connected";
-    }
-    else
-    {
-        die("DB connection failed");
-    }
-
-    $query = "INSERT INTO users(username, password)";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result)
-    {
-        die("Query failed");
-    }
-
+    updateTable();
 }
 
 ?>
-
-
 
 
 
@@ -59,13 +39,27 @@ if(isset($_POST['submit']))
                 <input type="password" name="password" class="form-control">
             </div>
 
-            <input type="submit" name="submit" class="btn-primary">
+            <div class="form-group">
+                <select name="id" id="">
+                    <?php
+                    showAllData();
+
+                    ?>
+
+
+
+<!--                    <option value="">1</option>-->
+                </select>
+            </div>
+
+            <input type="submit" value="Update" name="submit" class="btn-primary">
 
 
 
         </form>
     </div>
 </div>
+
 
 
 
