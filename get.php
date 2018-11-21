@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<?php
+
+
+$_GET; //superglobal variable available anywhere
+
+print_r($_GET);
+
+
+$id = 10;
+
+//the use of GET can be used to control flow of webpages/applications
+//ex) if a user clicks on a certain link, give a certain id to go to a certain page
+
+
+?>
+
+<a href="get.php?id=200">Static id set</a>
+
+<a href="get.php?id=<?php echo $id;?>">Dynamic id set</a>
+
+
+</body>
+</html>
